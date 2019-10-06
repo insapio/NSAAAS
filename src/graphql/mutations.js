@@ -9,6 +9,10 @@ export const createTalk = `mutation CreateTalk($input: CreateTalkInput!) {
     description
     speakerName
     speakerBio
+    speakerPhone
+    comments {
+      nextToken
+    }
   }
 }
 `;
@@ -20,6 +24,10 @@ export const updateTalk = `mutation UpdateTalk($input: UpdateTalkInput!) {
     description
     speakerName
     speakerBio
+    speakerPhone
+    comments {
+      nextToken
+    }
   }
 }
 `;
@@ -31,6 +39,61 @@ export const deleteTalk = `mutation DeleteTalk($input: DeleteTalkInput!) {
     description
     speakerName
     speakerBio
+    speakerPhone
+    comments {
+      nextToken
+    }
+  }
+}
+`;
+export const createComment = `mutation CreateComment($input: CreateCommentInput!) {
+  createComment(input: $input) {
+    id
+    message
+    createdBy
+    talk {
+      id
+      clientId
+      name
+      description
+      speakerName
+      speakerBio
+      speakerPhone
+    }
+  }
+}
+`;
+export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!) {
+  updateComment(input: $input) {
+    id
+    message
+    createdBy
+    talk {
+      id
+      clientId
+      name
+      description
+      speakerName
+      speakerBio
+      speakerPhone
+    }
+  }
+}
+`;
+export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!) {
+  deleteComment(input: $input) {
+    id
+    message
+    createdBy
+    talk {
+      id
+      clientId
+      name
+      description
+      speakerName
+      speakerBio
+      speakerPhone
+    }
   }
 }
 `;

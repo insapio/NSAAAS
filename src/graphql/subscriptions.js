@@ -9,6 +9,10 @@ export const onCreateTalk = `subscription OnCreateTalk {
     description
     speakerName
     speakerBio
+    speakerPhone
+    comments {
+      nextToken
+    }
   }
 }
 `;
@@ -20,6 +24,10 @@ export const onUpdateTalk = `subscription OnUpdateTalk {
     description
     speakerName
     speakerBio
+    speakerPhone
+    comments {
+      nextToken
+    }
   }
 }
 `;
@@ -31,6 +39,61 @@ export const onDeleteTalk = `subscription OnDeleteTalk {
     description
     speakerName
     speakerBio
+    speakerPhone
+    comments {
+      nextToken
+    }
+  }
+}
+`;
+export const onCreateComment = `subscription OnCreateComment($createdBy: String!) {
+  onCreateComment(createdBy: $createdBy) {
+    id
+    message
+    createdBy
+    talk {
+      id
+      clientId
+      name
+      description
+      speakerName
+      speakerBio
+      speakerPhone
+    }
+  }
+}
+`;
+export const onUpdateComment = `subscription OnUpdateComment($createdBy: String!) {
+  onUpdateComment(createdBy: $createdBy) {
+    id
+    message
+    createdBy
+    talk {
+      id
+      clientId
+      name
+      description
+      speakerName
+      speakerBio
+      speakerPhone
+    }
+  }
+}
+`;
+export const onDeleteComment = `subscription OnDeleteComment($createdBy: String!) {
+  onDeleteComment(createdBy: $createdBy) {
+    id
+    message
+    createdBy
+    talk {
+      id
+      clientId
+      name
+      description
+      speakerName
+      speakerBio
+      speakerPhone
+    }
   }
 }
 `;

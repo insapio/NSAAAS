@@ -9,6 +9,11 @@
             "UnauthRoleName": "nsaaas-dev-20191004223001-unauthRole",
             "StackName": "nsaaas-dev-20191004223001",
             "StackId": "arn:aws:cloudformation:us-east-1:733224113635:stack/nsaaas-dev-20191004223001/6a2dd8b0-e720-11e9-b742-0a51b82e168a"
+        },
+        "categories": {
+            "auth": {
+                "nsaaas099f1ae1": {}
+            }
         }
     }
 }
